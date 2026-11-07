@@ -8,9 +8,9 @@ Statyczna strona one-page (HTML + Tailwind CSS przez CDN + Font Awesome + Vanill
 3. Po ok. minucie strona będzie dostępna pod adresem `https://<użytkownik>.github.io/<repozytorium>/`.
 
 ## Co uzupełnić przed startem
-- **Formularz** – załóż darmowe konto na [formspree.io](https://formspree.io) i zamień `TWOJ_ID` w atrybucie `action` formularza. Do tego czasu formularz otwiera program pocztowy (mailto).
+- **Formularz** – działa przez FormSubmit.co bez zakładania konta. Po pierwszym wysłanym zgłoszeniu na skrzynkę meble.mirage24@gmail.com przyjdzie e-mail „Action Required: Activate FormSubmit” – kliknij przycisk aktywacji jeden raz.
 - **Zdjęcia realizacji** – dodaj pliki do folderu `img/` i podmień adresy `src` w sekcji `#realizacje`.
-- **Opinie** – zastąp przykładowe karty prawdziwymi opiniami (atrybut `data-source="google"` lub `"oferteo"`), uzupełnij oceny oraz linki do Facebooka, Instagrama i wizytówki Google.
+- **Opinie** – sekcja pokazuje ocenę z Oferteo (5,0 / 24 opinie). Można dodać karty z prawdziwymi opiniami klientów.
 
 ## Materiały marki (folder `img/`)
 | Plik | Zastosowanie |
