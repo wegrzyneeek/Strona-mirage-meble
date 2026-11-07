@@ -5,16 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mirage Meble | Meble na wymiar, kuchnie i zabudowy premium</title>
   <meta name="description" content="Mirage Meble – projektujemy i wykonujemy meble na wymiar: kuchnie, szafy i kompleksowe zabudowy. Realizacje pod klucz dla klientów prywatnych i firm wykończeniowych." />
-  <meta name="theme-color" content="#14332A" />
+  <meta name="theme-color" content="#0B231C" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="Mirage Meble – Meble na wymiar premium" />
   <meta property="og:description" content="Kuchnie, szafy i kompleksowe zabudowy na wymiar. Precyzja, materiały premium, realizacja pod klucz." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=1200&q=80" />
+  <meta property="og:image" content="img/mirage-plakat.jpg" />
 
   <!-- Favicon (inline SVG) -->
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2314332A'/%3E%3Cpath d='M14 46V18l18 18 18-18v28' fill='none' stroke='%23C08A5B' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
+  <link rel="icon" type="image/png" href="img/favicon.png" />
+  <link rel="apple-touch-icon" href="img/favicon.png" />
 
   <!-- Google Fonts: Cormorant Garamond (nagłówki) + Montserrat (tekst) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -32,25 +33,25 @@
         extend: {
           colors: {
             forest: {
-              950: '#0B1F19',
-              900: '#10291F',
-              800: '#14332A', // kolor główny – butelkowa zieleń
-              700: '#1D4537',
-              600: '#2A5C4A',
-              500: '#3E7561'
+              950: '#07170F',
+              900: '#0B231C', // tło logo – najgłębsza zieleń
+              800: '#0F2A21', // kolor główny – butelkowa zieleń
+              700: '#183B2E',
+              600: '#24503F',
+              500: '#386B57'
             },
             cream: {
-              50:  '#FDFBF7',
-              100: '#F8F4EC', // kremowa biel – tło
+              50:  '#FBF9F4',
+              100: '#F3EFE7', // kremowa biel z logo – tło
               200: '#EFE7D8',
               300: '#E2D5BE'
             },
             copper: {
-              300: '#E2B88F',
-              400: '#D4A373',
-              500: '#C08A5B', // miedź / naturalne drewno – akcent
-              600: '#A67144',
-              700: '#7F5532'
+              300: '#E3B592',
+              400: '#D49A72',
+              500: '#C68760', // miedź z logo – akcent
+              600: '#A06B47', // ciemniejsza miedź – tekst na kremowym tle
+              700: '#7A4F33'
             },
             ink: '#1E2421'
           },
@@ -68,11 +69,11 @@
 
   <style>
     :root {
-      --forest: #14332A;
-      --forest-dark: #0B1F19;
-      --cream: #F8F4EC;
-      --copper: #C08A5B;
-      --copper-light: #D4A373;
+      --forest: #0F2A21;
+      --forest-dark: #0B231C;
+      --cream: #F3EFE7;
+      --copper: #C68760;
+      --copper-light: #D49A72;
     }
 
     html { scroll-padding-top: 88px; }
@@ -94,12 +95,22 @@
     .nav-link.active { color: var(--copper-light); }
 
     /* Hero */
-    .hero-bg { background-image: url('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=2000&q=80'); background-size: cover; background-position: center; transform: scale(1.08); animation: heroZoom 18s ease-out forwards; }
+    .hero-img { transform: scale(1.06); animation: heroZoom 18s ease-out forwards; }
     @keyframes heroZoom { to { transform: scale(1); } }
-    .hero-overlay { background: linear-gradient(105deg, rgba(11,31,25,.94) 0%, rgba(20,51,42,.82) 45%, rgba(20,51,42,.35) 100%); }
+    .hero-fade { background: linear-gradient(180deg, rgba(11,35,28,.88) 0%, rgba(11,35,28,.78) 55%, rgba(11,35,28,.95) 100%); }
+    @media (min-width: 1024px) {
+      .hero-fade { background: linear-gradient(90deg, #0B231C 0%, rgba(11,35,28,.92) 18%, rgba(11,35,28,.55) 42%, rgba(11,35,28,.08) 72%, rgba(11,35,28,0) 100%), linear-gradient(0deg, rgba(11,35,28,.5), transparent 30%); }
+    }
+    /* Panel drewna (orzech) */
+    .wood-panel { background:
+        repeating-linear-gradient(90deg, rgba(0,0,0,.10) 0 1px, transparent 1px 7px),
+        repeating-linear-gradient(88deg, rgba(255,214,170,.07) 0 2px, transparent 2px 13px),
+        linear-gradient(90deg, #5A3B25, #7A5134 35%, #6A4630 60%, #8A5D3C 85%, #5E3E28); }
+    .btn-frame { transition: background-color .3s ease, transform .3s ease; }
+    .btn-frame:hover { background: rgba(198,135,96,.14); transform: translateY(-2px); }
 
     /* Tekstura „słojów drewna” – subtelny akcent */
-    .grain { background-image: repeating-linear-gradient(100deg, rgba(192,138,91,.05) 0 2px, transparent 2px 9px); }
+    .grain { background-image: repeating-linear-gradient(100deg, rgba(198,135,96,.05) 0 2px, transparent 2px 9px); }
 
     /* Linia ozdobna */
     .ornament { display: inline-flex; align-items: center; gap: .75rem; }
@@ -107,8 +118,8 @@
     .ornament-left::after { display: none; }
 
     /* Przyciski */
-    .btn-copper { background: linear-gradient(135deg, #D4A373, #C08A5B 55%, #A67144); transition: transform .3s ease, box-shadow .3s ease, filter .3s ease; }
-    .btn-copper:hover { transform: translateY(-2px); box-shadow: 0 15px 30px -10px rgba(192,138,91,.6); filter: brightness(1.05); }
+    .btn-copper { background: linear-gradient(135deg, #D49A72, #C68760 55%, #A06B47); transition: transform .3s ease, box-shadow .3s ease, filter .3s ease; }
+    .btn-copper:hover { transform: translateY(-2px); box-shadow: 0 15px 30px -10px rgba(198,135,96,.6); filter: brightness(1.05); }
     .btn-outline { transition: all .3s ease; }
     .btn-outline:hover { background: rgba(248,244,236,.1); border-color: var(--copper-light); color: var(--copper-light); }
 
@@ -120,13 +131,13 @@
     .reveal-delay-3 { transition-delay: .36s; }
     @media (prefers-reduced-motion: reduce) {
       .reveal { opacity: 1; transform: none; transition: none; }
-      .hero-bg { animation: none; transform: none; }
+      .hero-img { animation: none; transform: none; }
       html { scroll-behavior: auto; }
     }
 
     /* Karty oferty */
     .offer-card { transition: transform .5s ease, box-shadow .5s ease; }
-    .offer-card:hover { transform: translateY(-8px); box-shadow: 0 30px 60px -25px rgba(11,31,25,.45); }
+    .offer-card:hover { transform: translateY(-8px); box-shadow: 0 30px 60px -25px rgba(11,35,28,.45); }
     .offer-card img { transition: transform 1.2s ease; }
     .offer-card:hover img { transform: scale(1.07); }
 
@@ -149,7 +160,7 @@
 
     /* Opinie */
     .review-card { transition: transform .4s ease, box-shadow .4s ease; }
-    .review-card:hover { transform: translateY(-6px); box-shadow: 0 25px 50px -20px rgba(11,31,25,.3); }
+    .review-card:hover { transform: translateY(-6px); box-shadow: 0 25px 50px -20px rgba(11,35,28,.3); }
     .reviews-track { scroll-snap-type: x mandatory; scrollbar-width: none; }
     .reviews-track::-webkit-scrollbar { display: none; }
     .reviews-track > * { scroll-snap-align: start; }
@@ -198,15 +209,8 @@
   <header id="navbar" class="fixed top-0 inset-x-0 z-50 py-5">
     <nav class="max-w-7xl mx-auto px-5 lg:px-8 flex items-center justify-between" aria-label="Główna nawigacja">
       <a href="#home" class="flex items-center gap-3 group" aria-label="Mirage Meble – strona główna">
-        <!-- Logo: aby użyć własnego pliku, zamień SVG na <img src="logo.png" alt="Mirage Meble" class="h-11"> -->
-        <svg class="w-11 h-11 shrink-0" viewBox="0 0 64 64" aria-hidden="true">
-          <rect x="1" y="1" width="62" height="62" rx="14" fill="none" stroke="#C08A5B" stroke-width="2"/>
-          <path d="M15 46V18l17 18 17-18v28" fill="none" stroke="#D4A373" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        <span class="leading-none">
-          <span class="block font-serif text-2xl font-semibold tracking-[0.18em] text-cream-100">MIRAGE</span>
-          <span class="block text-[10px] tracking-widest2 text-copper-400 mt-1">MEBLE NA WYMIAR</span>
-        </span>
+        <img src="img/logo-znak-jasny.png" alt="" class="h-10 w-auto shrink-0" width="368" height="312" />
+        <img src="img/logo-napis-jasny.png" alt="Mirage Meble" class="h-8 sm:h-9 w-auto" width="918" height="210" />
       </a>
 
       <ul class="hidden lg:flex items-center gap-9 text-[13px] font-medium tracking-[0.12em] uppercase text-cream-100/85">
@@ -250,29 +254,42 @@
          1. HERO
     ============================================================ -->
     <section id="home" class="relative min-h-[100svh] flex items-center overflow-hidden bg-forest-900">
-      <div class="hero-bg absolute inset-0" role="img" aria-label="Elegancka kuchnia na wymiar"></div>
-      <div class="hero-overlay absolute inset-0"></div>
-      <div class="absolute inset-0 grain opacity-60"></div>
+      <!-- Kadr kuchni z materiałów Mirage Meble -->
+      <div class="absolute inset-y-0 right-0 w-full lg:w-[46%] overflow-hidden">
+        <img src="img/kuchnia-mirage.jpg" alt="Kuchnia na wymiar w butelkowej zieleni i drewnie orzechowym" class="hero-img w-full h-full object-cover" fetchpriority="high" />
+        <div class="absolute inset-0 hero-fade"></div>
+      </div>
+      <!-- Pionowy panel drewna i miedziana linia – jak na plakacie -->
+      <div class="wood-panel hidden md:block absolute inset-y-0 left-0 w-10 lg:w-16" aria-hidden="true"></div>
+      <div class="hidden md:block absolute inset-y-0 left-14 lg:left-24 w-px bg-copper-500/50" aria-hidden="true"></div>
+      <div class="absolute inset-0 grain opacity-40 pointer-events-none"></div>
 
-      <div class="relative z-10 max-w-7xl mx-auto px-5 lg:px-8 pt-32 pb-24 w-full">
-        <div class="max-w-3xl">
-          <p class="ornament ornament-left text-copper-400 text-xs font-semibold tracking-widest2 uppercase mb-7 reveal">Pracownia mebli na wymiar</p>
-          <h1 class="font-serif text-cream-100 text-5xl sm:text-6xl lg:text-[5.2rem] leading-[1.02] font-medium reveal reveal-delay-1">
-            Meble, które stają się <em class="text-copper-400 font-normal">sercem</em> Twojego wnętrza
+      <div class="relative z-10 max-w-7xl mx-auto px-5 md:pl-24 lg:pl-36 lg:pr-8 pt-32 pb-24 w-full">
+        <div class="max-w-2xl">
+          <p class="ornament ornament-left text-copper-400 text-xs font-semibold tracking-widest2 uppercase mb-7 reveal">Mirage Meble · pracownia mebli</p>
+          <h1 class="font-serif text-cream-100 text-6xl sm:text-7xl lg:text-[6.2rem] leading-[0.95] font-medium uppercase reveal reveal-delay-1">
+            Meble<br />na wymiar
           </h1>
-          <p class="mt-8 text-cream-100/80 text-base sm:text-lg leading-relaxed max-w-2xl font-light reveal reveal-delay-2">
-            Projektujemy i wykonujemy kuchnie, szafy oraz kompleksowe zabudowy na wymiar – z precyzją co do milimetra, z materiałów klasy premium i z pełną odpowiedzialnością za efekt końcowy. Od pierwszego szkicu aż po montaż pod klucz.
-          </p>
-          <div class="mt-11 flex flex-col sm:flex-row gap-4 reveal reveal-delay-3">
-            <a href="#kontakt" class="btn-copper text-white text-[13px] font-semibold tracking-[0.15em] uppercase px-9 py-4 rounded-sm text-center">
-              Umów bezpłatną konsultację <i class="fa-solid fa-arrow-right ml-2"></i>
+          <p class="mt-6 text-cream-100/90 text-xl sm:text-2xl font-light tracking-[0.12em] reveal reveal-delay-1">Od pomiaru po montaż</p>
+          <span class="block w-40 h-px bg-copper-500 mt-9 reveal reveal-delay-2"></span>
+          <ul class="mt-8 flex flex-wrap items-center gap-x-4 gap-y-2 text-cream-100/85 text-sm sm:text-[15px] tracking-[0.08em] reveal reveal-delay-2">
+            <li>Kuchnie</li><li class="text-copper-500" aria-hidden="true">•</li>
+            <li>Szafy i garderoby</li><li class="text-copper-500" aria-hidden="true">•</li>
+            <li>Zabudowy</li><li class="text-copper-500" aria-hidden="true">•</li>
+            <li>Meble do salonu i biura</li>
+          </ul>
+          <p class="mt-10 font-serif text-cream-100 text-3xl sm:text-4xl leading-tight reveal reveal-delay-3">Stwórzmy razem<br />Twoją przestrzeń</p>
+          <div class="mt-9 flex flex-col sm:flex-row gap-4 reveal reveal-delay-3">
+            <a href="#kontakt" class="btn-frame group inline-flex items-center gap-5 border border-copper-500 text-cream-100 px-7 py-4 rounded-sm">
+              <i class="fa-solid fa-arrow-right-long text-copper-400 transition-transform group-hover:translate-x-1"></i>
+              <span class="text-[13px] font-medium tracking-[0.14em] leading-snug">Bezpłatna wycena<br class="hidden sm:block" /> i konsultacja</span>
             </a>
-            <a href="#realizacje" class="btn-outline border border-cream-100/40 text-cream-100 text-[13px] font-semibold tracking-[0.15em] uppercase px-9 py-4 rounded-sm text-center">
+            <a href="#realizacje" class="btn-outline inline-flex items-center justify-center border border-cream-100/30 text-cream-100 text-[13px] font-medium tracking-[0.14em] uppercase px-7 py-4 rounded-sm">
               Zobacz realizacje
             </a>
           </div>
 
-          <div class="mt-16 grid grid-cols-3 gap-6 max-w-xl border-t border-cream-100/15 pt-8 reveal reveal-delay-3">
+          <div class="mt-14 grid grid-cols-3 gap-6 max-w-lg border-t border-cream-100/15 pt-8 reveal reveal-delay-3">
             <div>
               <p class="font-serif text-4xl text-copper-400"><span class="stat-number" data-count="12">0</span>+</p>
               <p class="text-[11px] tracking-[0.15em] uppercase text-cream-100/60 mt-1">lat doświadczenia</p>
@@ -289,7 +306,7 @@
         </div>
       </div>
 
-      <a href="#o-nas" class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 text-cream-100/60 hover:text-copper-400 transition flex flex-col items-center gap-2 text-[10px] tracking-widest2 uppercase" aria-label="Przewiń do sekcji O nas">
+      <a href="#o-nas" class="hidden sm:flex absolute bottom-8 left-1/2 -translate-x-1/2 z-10 text-cream-100/60 hover:text-copper-400 transition flex-col items-center gap-2 text-[10px] tracking-widest2 uppercase" aria-label="Przewiń do sekcji O nas">
         Przewiń <i class="fa-solid fa-chevron-down animate-bounce"></i>
       </a>
     </section>
@@ -469,7 +486,7 @@
               <span class="absolute top-5 left-5 bg-forest-800/90 text-copper-300 text-[11px] font-semibold tracking-[0.2em] uppercase px-4 py-2">03 · Zabudowy</span>
             </div>
             <div class="p-8 lg:p-10">
-              <h3 class="font-serif text-3xl text-forest-800 font-semibold">Zabudowy wnętrz</h3>
+              <h3 class="font-serif text-3xl text-forest-800 font-semibold">Zabudowy, salon i biuro</h3>
               <p class="mt-4 text-ink/70 leading-relaxed">
                 Salon, łazienka, sypialnia, gabinet czy przedpokój – projektujemy zabudowy, które porządkują przestrzeń i nadają jej charakter. Ściany RTV, biblioteczki, meble łazienkowe, panele ścienne i ukryte drzwi tworzą spójną, elegancką całość.
               </p>
@@ -477,7 +494,7 @@
                 <li><i class="fa-solid fa-check text-copper-500 mr-2"></i>Ściany RTV i biblioteczki</li>
                 <li><i class="fa-solid fa-check text-copper-500 mr-2"></i>Meble łazienkowe</li>
                 <li><i class="fa-solid fa-check text-copper-500 mr-2"></i>Panele i lamele ścienne</li>
-                <li><i class="fa-solid fa-check text-copper-500 mr-2"></i>Meble do biur i lokali</li>
+                <li><i class="fa-solid fa-check text-copper-500 mr-2"></i>Meble do salonu i biura</li>
               </ul>
               <a href="#kontakt" data-service="Zabudowy wnętrz" class="service-link inline-flex items-center gap-3 mt-8 text-forest-800 font-semibold text-sm tracking-[0.12em] uppercase group-hover:text-copper-600 transition">
                 Zapytaj o zabudowę <i class="fa-solid fa-arrow-right-long transition-transform group-hover:translate-x-2"></i>
@@ -826,7 +843,12 @@
             </li>
           </ul>
 
-          <div class="mt-10 flex gap-3 reveal">
+          <a href="https://m.me/" target="_blank" rel="noopener" class="btn-frame group mt-10 inline-flex items-center gap-5 border border-copper-500 text-cream-100 px-7 py-4 rounded-sm reveal">
+            <i class="fa-solid fa-arrow-right-long text-copper-400 transition-transform group-hover:translate-x-1"></i>
+            <span class="text-[13px] tracking-[0.14em] leading-snug">Napisz do nas<br />w wiadomości prywatnej</span>
+          </a>
+
+          <div class="mt-8 flex gap-3 reveal">
             <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook" class="w-11 h-11 rounded-full bg-cream-100/10 hover:bg-copper-500 flex items-center justify-center transition"><i class="fa-brands fa-facebook-f"></i></a>
             <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram" class="w-11 h-11 rounded-full bg-cream-100/10 hover:bg-copper-500 flex items-center justify-center transition"><i class="fa-brands fa-instagram"></i></a>
             <a href="https://www.pinterest.com/" target="_blank" rel="noopener" aria-label="Pinterest" class="w-11 h-11 rounded-full bg-cream-100/10 hover:bg-copper-500 flex items-center justify-center transition"><i class="fa-brands fa-pinterest-p"></i></a>
@@ -904,7 +926,7 @@
             <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off" />
 
             <label class="flex items-start gap-3 mt-8 text-xs text-cream-100/65 leading-relaxed cursor-pointer" id="consentWrap">
-              <input type="checkbox" id="consent" name="zgoda_rodo" required class="mt-0.5 w-4 h-4 accent-[#C08A5B] shrink-0" />
+              <input type="checkbox" id="consent" name="zgoda_rodo" required class="mt-0.5 w-4 h-4 accent-[#C68760] shrink-0" />
               <span>Wyrażam zgodę na przetwarzanie moich danych osobowych przez Mirage Meble w celu odpowiedzi na zapytanie, zgodnie z RODO. *</span>
             </label>
             <p id="consentError" class="hidden text-[#F0A58A] text-xs mt-2">Zgoda jest wymagana, abyśmy mogli odpowiedzieć.</p>
@@ -925,9 +947,8 @@
     <div class="max-w-7xl mx-auto px-5 lg:px-8">
       <div class="grid md:grid-cols-4 gap-10 pb-12 border-b border-cream-100/10">
         <div class="md:col-span-2">
-          <a href="#home" class="flex items-center gap-3">
-            <svg class="w-10 h-10" viewBox="0 0 64 64" aria-hidden="true"><rect x="1" y="1" width="62" height="62" rx="14" fill="none" stroke="#C08A5B" stroke-width="2"/><path d="M15 46V18l17 18 17-18v28" fill="none" stroke="#D4A373" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span class="font-serif text-2xl font-semibold tracking-[0.18em] text-cream-100">MIRAGE <span class="text-copper-400">MEBLE</span></span>
+          <a href="#home" class="inline-block" aria-label="Mirage Meble – na górę strony">
+            <img src="img/logo-mirage-jasne.png" alt="Mirage Meble" class="h-24 w-auto" width="918" height="592" loading="lazy" />
           </a>
           <p class="mt-5 max-w-sm text-sm leading-relaxed">Meble na wymiar klasy premium. Kuchnie, szafy i kompleksowe zabudowy dla klientów prywatnych i firm wykończeniowych.</p>
         </div>
@@ -946,7 +967,7 @@
           <ul class="space-y-3 text-sm">
             <li>Meble kuchenne</li>
             <li>Szafy i garderoby</li>
-            <li>Zabudowy wnętrz</li>
+            <li>Zabudowy, salon i biuro</li>
             <li>Realizacje pod klucz</li>
           </ul>
         </div>
