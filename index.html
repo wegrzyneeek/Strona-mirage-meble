@@ -1,0 +1,1190 @@
+<!DOCTYPE html>
+<html lang="pl" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mirage Meble | Meble na wymiar, kuchnie i zabudowy premium</title>
+  <meta name="description" content="Mirage Meble – projektujemy i wykonujemy meble na wymiar: kuchnie, szafy i kompleksowe zabudowy. Realizacje pod klucz dla klientów prywatnych i firm wykończeniowych." />
+  <meta name="theme-color" content="#14332A" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Mirage Meble – Meble na wymiar premium" />
+  <meta property="og:description" content="Kuchnie, szafy i kompleksowe zabudowy na wymiar. Precyzja, materiały premium, realizacja pod klucz." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=1200&q=80" />
+
+  <!-- Favicon (inline SVG) -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2314332A'/%3E%3Cpath d='M14 46V18l18 18 18-18v28' fill='none' stroke='%23C08A5B' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
+
+  <!-- Google Fonts: Cormorant Garamond (nagłówki) + Montserrat (tekst) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" referrerpolicy="no-referrer" />
+
+  <!-- Tailwind CSS (CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            forest: {
+              950: '#0B1F19',
+              900: '#10291F',
+              800: '#14332A', // kolor główny – butelkowa zieleń
+              700: '#1D4537',
+              600: '#2A5C4A',
+              500: '#3E7561'
+            },
+            cream: {
+              50:  '#FDFBF7',
+              100: '#F8F4EC', // kremowa biel – tło
+              200: '#EFE7D8',
+              300: '#E2D5BE'
+            },
+            copper: {
+              300: '#E2B88F',
+              400: '#D4A373',
+              500: '#C08A5B', // miedź / naturalne drewno – akcent
+              600: '#A67144',
+              700: '#7F5532'
+            },
+            ink: '#1E2421'
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            sans: ['Montserrat', 'system-ui', 'sans-serif']
+          },
+          letterSpacing: {
+            widest2: '0.3em'
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    :root {
+      --forest: #14332A;
+      --forest-dark: #0B1F19;
+      --cream: #F8F4EC;
+      --copper: #C08A5B;
+      --copper-light: #D4A373;
+    }
+
+    html { scroll-padding-top: 88px; }
+    body { font-family: 'Montserrat', system-ui, sans-serif; background: var(--cream); color: #1E2421; -webkit-font-smoothing: antialiased; }
+
+    ::selection { background: var(--copper); color: #fff; }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 10px; }
+    ::-webkit-scrollbar-track { background: var(--forest-dark); }
+    ::-webkit-scrollbar-thumb { background: var(--copper); border-radius: 10px; border: 2px solid var(--forest-dark); }
+
+    /* Nawigacja */
+    #navbar { transition: background-color .4s ease, padding .4s ease, box-shadow .4s ease; }
+    #navbar.scrolled { background-color: rgba(11, 31, 25, .94); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); padding-top: .75rem; padding-bottom: .75rem; box-shadow: 0 10px 30px -10px rgba(0,0,0,.4); }
+    .nav-link { position: relative; }
+    .nav-link::after { content: ''; position: absolute; left: 0; bottom: -6px; width: 0; height: 1px; background: var(--copper); transition: width .35s ease; }
+    .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+    .nav-link.active { color: var(--copper-light); }
+
+    /* Hero */
+    .hero-bg { background-image: url('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=2000&q=80'); background-size: cover; background-position: center; transform: scale(1.08); animation: heroZoom 18s ease-out forwards; }
+    @keyframes heroZoom { to { transform: scale(1); } }
+    .hero-overlay { background: linear-gradient(105deg, rgba(11,31,25,.94) 0%, rgba(20,51,42,.82) 45%, rgba(20,51,42,.35) 100%); }
+
+    /* Tekstura „słojów drewna” – subtelny akcent */
+    .grain { background-image: repeating-linear-gradient(100deg, rgba(192,138,91,.05) 0 2px, transparent 2px 9px); }
+
+    /* Linia ozdobna */
+    .ornament { display: inline-flex; align-items: center; gap: .75rem; }
+    .ornament::before, .ornament::after { content: ''; width: 36px; height: 1px; background: currentColor; opacity: .7; }
+    .ornament-left::after { display: none; }
+
+    /* Przyciski */
+    .btn-copper { background: linear-gradient(135deg, #D4A373, #C08A5B 55%, #A67144); transition: transform .3s ease, box-shadow .3s ease, filter .3s ease; }
+    .btn-copper:hover { transform: translateY(-2px); box-shadow: 0 15px 30px -10px rgba(192,138,91,.6); filter: brightness(1.05); }
+    .btn-outline { transition: all .3s ease; }
+    .btn-outline:hover { background: rgba(248,244,236,.1); border-color: var(--copper-light); color: var(--copper-light); }
+
+    /* Animacje przy przewijaniu */
+    .reveal { opacity: 0; transform: translateY(40px); transition: opacity .9s cubic-bezier(.2,.65,.3,1), transform .9s cubic-bezier(.2,.65,.3,1); }
+    .reveal.visible { opacity: 1; transform: none; }
+    .reveal-delay-1 { transition-delay: .12s; }
+    .reveal-delay-2 { transition-delay: .24s; }
+    .reveal-delay-3 { transition-delay: .36s; }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+      .hero-bg { animation: none; transform: none; }
+      html { scroll-behavior: auto; }
+    }
+
+    /* Karty oferty */
+    .offer-card { transition: transform .5s ease, box-shadow .5s ease; }
+    .offer-card:hover { transform: translateY(-8px); box-shadow: 0 30px 60px -25px rgba(11,31,25,.45); }
+    .offer-card img { transition: transform 1.2s ease; }
+    .offer-card:hover img { transform: scale(1.07); }
+
+    /* Portfolio */
+    .portfolio-item { overflow: hidden; cursor: pointer; }
+    .portfolio-item img { transition: transform 1s ease, filter .6s ease; }
+    .portfolio-item:hover img { transform: scale(1.08); filter: brightness(.65); }
+    .portfolio-caption { opacity: 0; transform: translateY(20px); transition: all .5s ease; }
+    .portfolio-item:hover .portfolio-caption, .portfolio-item:focus-visible .portfolio-caption { opacity: 1; transform: none; }
+    @media (hover: none) { .portfolio-caption { opacity: 1; transform: none; } .portfolio-item img { filter: brightness(.8); } }
+    .filter-btn.active { background: var(--forest); color: var(--cream); border-color: var(--forest); }
+    .portfolio-item.hide { display: none; }
+
+    /* Fallback, gdy zdjęcie się nie wczyta */
+    img.img-fallback { background: linear-gradient(135deg, #1D4537, #14332A 60%, #7F5532); }
+
+    /* Lightbox */
+    #lightbox { transition: opacity .4s ease; }
+    #lightbox.open { opacity: 1; pointer-events: auto; }
+
+    /* Opinie */
+    .review-card { transition: transform .4s ease, box-shadow .4s ease; }
+    .review-card:hover { transform: translateY(-6px); box-shadow: 0 25px 50px -20px rgba(11,31,25,.3); }
+    .reviews-track { scroll-snap-type: x mandatory; scrollbar-width: none; }
+    .reviews-track::-webkit-scrollbar { display: none; }
+    .reviews-track > * { scroll-snap-align: start; }
+
+    /* Formularz */
+    .field { position: relative; }
+    .field input, .field textarea, .field select { width: 100%; background: transparent; border: 0; border-bottom: 1px solid rgba(248,244,236,.25); padding: 1.4rem 0 .6rem; color: #F8F4EC; outline: none; transition: border-color .3s ease; font-size: .95rem; }
+    .field select { appearance: none; -webkit-appearance: none; cursor: pointer; }
+    .field select option { color: #1E2421; }
+    .field label { position: absolute; left: 0; top: 1.3rem; color: rgba(248,244,236,.55); font-size: .9rem; pointer-events: none; transition: all .25s ease; }
+    .field input:focus, .field textarea:focus, .field select:focus { border-color: var(--copper); }
+    .field input:focus + label, .field input:not(:placeholder-shown) + label,
+    .field textarea:focus + label, .field textarea:not(:placeholder-shown) + label,
+    .field select:focus + label, .field select:valid + label { top: 0; font-size: .7rem; letter-spacing: .15em; text-transform: uppercase; color: var(--copper-light); }
+    .field .error-msg { display: none; color: #F0A58A; font-size: .75rem; margin-top: .35rem; }
+    .field.invalid input, .field.invalid textarea, .field.invalid select { border-color: #F0A58A; }
+    .field.invalid .error-msg { display: block; }
+
+    /* Licznik */
+    .stat-number { font-variant-numeric: tabular-nums; }
+
+    /* Menu mobilne */
+    #mobileMenu { transition: opacity .4s ease, visibility .4s ease; }
+    #mobileMenu.open { opacity: 1; visibility: visible; }
+    #mobileMenu a { transition: color .3s ease; }
+    .burger span { transition: transform .35s ease, opacity .35s ease; }
+    .burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .burger.open span:nth-child(2) { opacity: 0; }
+    .burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* Przycisk „do góry” */
+    #toTop { transition: opacity .4s ease, transform .4s ease; }
+    #toTop.show { opacity: 1; transform: none; pointer-events: auto; }
+
+    /* Toast */
+    #toast { transition: opacity .4s ease, transform .4s ease; }
+    #toast.show { opacity: 1; transform: translate(-50%, 0); }
+  </style>
+</head>
+
+<body class="overflow-x-hidden">
+
+  <!-- ============================================================
+       NAWIGACJA
+  ============================================================ -->
+  <header id="navbar" class="fixed top-0 inset-x-0 z-50 py-5">
+    <nav class="max-w-7xl mx-auto px-5 lg:px-8 flex items-center justify-between" aria-label="Główna nawigacja">
+      <a href="#home" class="flex items-center gap-3 group" aria-label="Mirage Meble – strona główna">
+        <!-- Logo: aby użyć własnego pliku, zamień SVG na <img src="logo.png" alt="Mirage Meble" class="h-11"> -->
+        <svg class="w-11 h-11 shrink-0" viewBox="0 0 64 64" aria-hidden="true">
+          <rect x="1" y="1" width="62" height="62" rx="14" fill="none" stroke="#C08A5B" stroke-width="2"/>
+          <path d="M15 46V18l17 18 17-18v28" fill="none" stroke="#D4A373" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="leading-none">
+          <span class="block font-serif text-2xl font-semibold tracking-[0.18em] text-cream-100">MIRAGE</span>
+          <span class="block text-[10px] tracking-widest2 text-copper-400 mt-1">MEBLE NA WYMIAR</span>
+        </span>
+      </a>
+
+      <ul class="hidden lg:flex items-center gap-9 text-[13px] font-medium tracking-[0.12em] uppercase text-cream-100/85">
+        <li><a href="#home" class="nav-link hover:text-copper-300">Start</a></li>
+        <li><a href="#o-nas" class="nav-link hover:text-copper-300">O nas</a></li>
+        <li><a href="#oferta" class="nav-link hover:text-copper-300">Oferta</a></li>
+        <li><a href="#realizacje" class="nav-link hover:text-copper-300">Realizacje</a></li>
+        <li><a href="#opinie" class="nav-link hover:text-copper-300">Opinie</a></li>
+        <li><a href="#kontakt" class="nav-link hover:text-copper-300">Kontakt</a></li>
+      </ul>
+
+      <div class="flex items-center gap-4">
+        <a href="tel:+48500000000" class="hidden md:inline-flex items-center gap-2 text-cream-100/90 hover:text-copper-300 text-sm transition">
+          <i class="fa-solid fa-phone text-copper-400"></i> +48 500 000 000
+        </a>
+        <a href="#kontakt" class="hidden sm:inline-flex btn-copper text-white text-[12px] font-semibold tracking-[0.15em] uppercase px-5 py-3 rounded-sm">Bezpłatna wycena</a>
+        <button id="burger" class="burger lg:hidden flex flex-col justify-center gap-[5px] w-10 h-10 items-center" aria-label="Otwórz menu" aria-expanded="false" aria-controls="mobileMenu">
+          <span class="block w-6 h-[2px] bg-cream-100"></span>
+          <span class="block w-6 h-[2px] bg-cream-100"></span>
+          <span class="block w-6 h-[2px] bg-cream-100"></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Menu mobilne -->
+  <div id="mobileMenu" class="fixed inset-0 z-40 bg-forest-950/98 grain opacity-0 invisible flex flex-col items-center justify-center lg:hidden">
+    <ul class="text-center space-y-7 font-serif text-4xl text-cream-100">
+      <li><a href="#home" class="mobile-link hover:text-copper-400">Start</a></li>
+      <li><a href="#o-nas" class="mobile-link hover:text-copper-400">O nas</a></li>
+      <li><a href="#oferta" class="mobile-link hover:text-copper-400">Oferta</a></li>
+      <li><a href="#realizacje" class="mobile-link hover:text-copper-400">Realizacje</a></li>
+      <li><a href="#opinie" class="mobile-link hover:text-copper-400">Opinie</a></li>
+      <li><a href="#kontakt" class="mobile-link hover:text-copper-400">Kontakt</a></li>
+    </ul>
+    <a href="tel:+48500000000" class="mt-12 text-copper-300 tracking-[0.15em] text-sm"><i class="fa-solid fa-phone mr-2"></i>+48 500 000 000</a>
+  </div>
+
+  <main>
+    <!-- ============================================================
+         1. HERO
+    ============================================================ -->
+    <section id="home" class="relative min-h-[100svh] flex items-center overflow-hidden bg-forest-900">
+      <div class="hero-bg absolute inset-0" role="img" aria-label="Elegancka kuchnia na wymiar"></div>
+      <div class="hero-overlay absolute inset-0"></div>
+      <div class="absolute inset-0 grain opacity-60"></div>
+
+      <div class="relative z-10 max-w-7xl mx-auto px-5 lg:px-8 pt-32 pb-24 w-full">
+        <div class="max-w-3xl">
+          <p class="ornament ornament-left text-copper-400 text-xs font-semibold tracking-widest2 uppercase mb-7 reveal">Pracownia mebli na wymiar</p>
+          <h1 class="font-serif text-cream-100 text-5xl sm:text-6xl lg:text-[5.2rem] leading-[1.02] font-medium reveal reveal-delay-1">
+            Meble, które stają się <em class="text-copper-400 font-normal">sercem</em> Twojego wnętrza
+          </h1>
+          <p class="mt-8 text-cream-100/80 text-base sm:text-lg leading-relaxed max-w-2xl font-light reveal reveal-delay-2">
+            Projektujemy i wykonujemy kuchnie, szafy oraz kompleksowe zabudowy na wymiar – z precyzją co do milimetra, z materiałów klasy premium i z pełną odpowiedzialnością za efekt końcowy. Od pierwszego szkicu aż po montaż pod klucz.
+          </p>
+          <div class="mt-11 flex flex-col sm:flex-row gap-4 reveal reveal-delay-3">
+            <a href="#kontakt" class="btn-copper text-white text-[13px] font-semibold tracking-[0.15em] uppercase px-9 py-4 rounded-sm text-center">
+              Umów bezpłatną konsultację <i class="fa-solid fa-arrow-right ml-2"></i>
+            </a>
+            <a href="#realizacje" class="btn-outline border border-cream-100/40 text-cream-100 text-[13px] font-semibold tracking-[0.15em] uppercase px-9 py-4 rounded-sm text-center">
+              Zobacz realizacje
+            </a>
+          </div>
+
+          <div class="mt-16 grid grid-cols-3 gap-6 max-w-xl border-t border-cream-100/15 pt-8 reveal reveal-delay-3">
+            <div>
+              <p class="font-serif text-4xl text-copper-400"><span class="stat-number" data-count="12">0</span>+</p>
+              <p class="text-[11px] tracking-[0.15em] uppercase text-cream-100/60 mt-1">lat doświadczenia</p>
+            </div>
+            <div>
+              <p class="font-serif text-4xl text-copper-400"><span class="stat-number" data-count="450">0</span>+</p>
+              <p class="text-[11px] tracking-[0.15em] uppercase text-cream-100/60 mt-1">zrealizowanych projektów</p>
+            </div>
+            <div>
+              <p class="font-serif text-4xl text-copper-400"><span class="stat-number" data-count="5">0</span> lat</p>
+              <p class="text-[11px] tracking-[0.15em] uppercase text-cream-100/60 mt-1">gwarancji</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a href="#o-nas" class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 text-cream-100/60 hover:text-copper-400 transition flex flex-col items-center gap-2 text-[10px] tracking-widest2 uppercase" aria-label="Przewiń do sekcji O nas">
+        Przewiń <i class="fa-solid fa-chevron-down animate-bounce"></i>
+      </a>
+    </section>
+
+    <!-- ============================================================
+         2. O NAS
+    ============================================================ -->
+    <section id="o-nas" class="py-24 lg:py-32 bg-cream-100 relative overflow-hidden">
+      <div class="max-w-7xl mx-auto px-5 lg:px-8 grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
+        <!-- Zdjęcia -->
+        <div class="relative reveal">
+          <div class="relative aspect-[4/5] overflow-hidden rounded-sm shadow-2xl">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1100&q=80" alt="Wnętrze z zabudową meblową na wymiar" class="w-full h-full object-cover" loading="lazy" />
+          </div>
+          <div class="hidden sm:block absolute -bottom-10 -right-6 lg:-right-10 w-1/2 aspect-square overflow-hidden rounded-sm border-[10px] border-cream-100 shadow-2xl">
+            <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=700&q=80" alt="Detal wykończenia mebli" class="w-full h-full object-cover" loading="lazy" />
+          </div>
+          <div class="absolute -top-6 -left-6 w-32 h-32 border border-copper-500/60 rounded-sm -z-0 pointer-events-none"></div>
+          <div class="absolute top-8 left-0 -translate-x-1/4 bg-forest-800 text-cream-100 px-6 py-5 shadow-xl rounded-sm">
+            <p class="font-serif text-4xl text-copper-400 leading-none">100%</p>
+            <p class="text-[10px] tracking-[0.2em] uppercase mt-2">na wymiar</p>
+          </div>
+        </div>
+
+        <!-- Tekst -->
+        <div>
+          <p class="ornament ornament-left text-copper-600 text-xs font-semibold tracking-widest2 uppercase mb-5 reveal">O nas</p>
+          <h2 class="font-serif text-4xl sm:text-5xl lg:text-[3.4rem] leading-[1.08] text-forest-800 font-medium reveal reveal-delay-1">
+            Kompleksowo. Precyzyjnie. <em class="text-copper-600">Bez kompromisów.</em>
+          </h2>
+          <div class="mt-8 space-y-5 text-ink/75 leading-relaxed reveal reveal-delay-2">
+            <p>
+              Mirage Meble to pracownia, w której rzemiosło spotyka się z nowoczesnym projektowaniem. Tworzymy meble na wymiar, które idealnie wpisują się w architekturę wnętrza, styl życia domowników i realny sposób korzystania z przestrzeni.
+            </p>
+            <p>
+              Nie sprzedajemy gotowych rozwiązań – <strong class="text-forest-800 font-semibold">każdy projekt powstaje od zera</strong>. Doradzamy w doborze materiałów, okuć i oświetlenia, przygotowujemy wizualizacje 3D, a następnie produkujemy i montujemy meble z dbałością o każdy detal.
+            </p>
+            <p>
+              Od lat współpracujemy z <strong class="text-forest-800 font-semibold">firmami wykończeniowymi, architektami i projektantami wnętrz</strong>. Rozumiemy harmonogramy budowy, dotrzymujemy terminów i koordynujemy prace z pozostałymi ekipami tak, aby inwestycja pod klucz przebiegła sprawnie – bez opóźnień i niespodzianek.
+            </p>
+          </div>
+
+          <div class="mt-10 grid sm:grid-cols-2 gap-6 reveal reveal-delay-3">
+            <div class="flex gap-4">
+              <span class="w-12 h-12 shrink-0 rounded-full bg-forest-800 text-copper-400 flex items-center justify-center"><i class="fa-solid fa-pen-ruler"></i></span>
+              <div>
+                <h3 class="font-semibold text-forest-800">Projekt i wizualizacja 3D</h3>
+                <p class="text-sm text-ink/65 mt-1">Zobaczysz swoje meble, zanim powstaną.</p>
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <span class="w-12 h-12 shrink-0 rounded-full bg-forest-800 text-copper-400 flex items-center justify-center"><i class="fa-solid fa-gem"></i></span>
+              <div>
+                <h3 class="font-semibold text-forest-800">Materiały premium</h3>
+                <p class="text-sm text-ink/65 mt-1">Sprawdzone płyty, fronty i okucia renomowanych marek.</p>
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <span class="w-12 h-12 shrink-0 rounded-full bg-forest-800 text-copper-400 flex items-center justify-center"><i class="fa-solid fa-handshake"></i></span>
+              <div>
+                <h3 class="font-semibold text-forest-800">Partner dla B2B</h3>
+                <p class="text-sm text-ink/65 mt-1">Stałe warunki i priorytetowe terminy dla firm.</p>
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <span class="w-12 h-12 shrink-0 rounded-full bg-forest-800 text-copper-400 flex items-center justify-center"><i class="fa-solid fa-shield-halved"></i></span>
+              <div>
+                <h3 class="font-semibold text-forest-800">Gwarancja i serwis</h3>
+                <p class="text-sm text-ink/65 mt-1">Opiekujemy się meblami również po montażu.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Proces współpracy -->
+    <section class="bg-forest-800 grain py-20 lg:py-24 text-cream-100" aria-labelledby="proces-title">
+      <div class="max-w-7xl mx-auto px-5 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-14">
+          <p class="ornament text-copper-400 text-xs font-semibold tracking-widest2 uppercase mb-4 reveal">Jak pracujemy</p>
+          <h2 id="proces-title" class="font-serif text-4xl sm:text-5xl font-medium reveal reveal-delay-1">Od pomysłu do montażu w 4 krokach</h2>
+        </div>
+        <ol class="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-cream-100/10">
+          <li class="bg-forest-800 p-8 reveal">
+            <span class="font-serif text-6xl text-copper-500/80">01</span>
+            <h3 class="mt-4 text-lg font-semibold tracking-wide">Konsultacja i pomiar</h3>
+            <p class="mt-3 text-sm text-cream-100/65 leading-relaxed">Poznajemy Twoje potrzeby, styl i budżet. Wykonujemy precyzyjny pomiar pomieszczenia.</p>
+          </li>
+          <li class="bg-forest-800 p-8 reveal reveal-delay-1">
+            <span class="font-serif text-6xl text-copper-500/80">02</span>
+            <h3 class="mt-4 text-lg font-semibold tracking-wide">Projekt i wycena</h3>
+            <p class="mt-3 text-sm text-cream-100/65 leading-relaxed">Przygotowujemy wizualizację 3D, dobieramy materiały i przedstawiamy przejrzystą wycenę.</p>
+          </li>
+          <li class="bg-forest-800 p-8 reveal reveal-delay-2">
+            <span class="font-serif text-6xl text-copper-500/80">03</span>
+            <h3 class="mt-4 text-lg font-semibold tracking-wide">Produkcja</h3>
+            <p class="mt-3 text-sm text-cream-100/65 leading-relaxed">Meble powstają w naszej pracowni na nowoczesnych maszynach, pod okiem doświadczonych stolarzy.</p>
+          </li>
+          <li class="bg-forest-800 p-8 reveal reveal-delay-3">
+            <span class="font-serif text-6xl text-copper-500/80">04</span>
+            <h3 class="mt-4 text-lg font-semibold tracking-wide">Montaż pod klucz</h3>
+            <p class="mt-3 text-sm text-cream-100/65 leading-relaxed">Montujemy, regulujemy i sprzątamy po sobie. Odbierasz gotowe wnętrze – bez stresu.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         3. OFERTA
+    ============================================================ -->
+    <section id="oferta" class="py-24 lg:py-32 bg-cream-50">
+      <div class="max-w-7xl mx-auto px-5 lg:px-8">
+        <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-16">
+          <div class="max-w-2xl">
+            <p class="ornament ornament-left text-copper-600 text-xs font-semibold tracking-widest2 uppercase mb-5 reveal">Oferta</p>
+            <h2 class="font-serif text-4xl sm:text-5xl lg:text-[3.4rem] leading-[1.08] text-forest-800 font-medium reveal reveal-delay-1">
+              Rozwiązania szyte na miarę <em class="text-copper-600">Twojej przestrzeni</em>
+            </h2>
+          </div>
+          <p class="max-w-md text-ink/70 leading-relaxed reveal reveal-delay-2">
+            Niezależnie od tego, czy urządzasz jedno pomieszczenie, czy cały dom – zapewnimy spójny styl i najwyższą jakość wykonania w każdym detalu.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+          <!-- Kuchnie -->
+          <article class="offer-card bg-white rounded-sm overflow-hidden group reveal">
+            <div class="relative aspect-[16/10] overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1556912173-3bb406ef7e77?auto=format&fit=crop&w=1100&q=80" alt="Nowoczesna kuchnia na wymiar" class="w-full h-full object-cover" loading="lazy" />
+              <span class="absolute top-5 left-5 bg-forest-800/90 text-copper-300 text-[11px] font-semibold tracking-[0.2em] uppercase px-4 py-2">01 · Kuchnie</span>
+            </div>
+            <div class="p-8 lg:p-10">
+              <h3 class="font-serif text-3xl text-forest-800 font-semibold">Meble kuchenne</h3>
+              <p class="mt-4 text-ink/70 leading-relaxed">
+                Kuchnia to miejsce, w którym funkcjonalność musi iść w parze z estetyką. Projektujemy ergonomiczne układy, maksymalnie wykorzystujemy każdy centymetr i dobieramy fronty, blaty oraz okucia, które posłużą latami – od minimalistycznych zabudów bezuchwytowych po ponadczasową klasykę.
+              </p>
+              <ul class="mt-6 grid grid-cols-2 gap-y-2 gap-x-4 text-sm text-ink/75">
+                <li><i class="fa-solid fa-check text-copper-500 mr-2"></i>Fronty lakierowane i fornirowane</li>
+                <li><i class="fa-solid fa-check text-copper-500 mr-2"></i>Blaty z kamienia i spieków</li>
+                <li><i class="fa-solid fa-check text-copper-500 mr-2"></i>Okucia Blum / Hettich</li>
+                <li><i class="fa-solid fa-check text-copper-500 mr-2"></i>Wyspy i zabudowa AGD</li>
+              </ul>
+              <a href="#kontakt" data-service="Meble kuchenne" class="service-link inline-flex items-center gap-3 mt-8 text-forest-800 font-semibold text-sm tracking-[0.12em] uppercase group-hover:text-copper-600 transition">
+                Zapytaj o kuchnię <i class="fa-solid fa-arrow-right-long transition-transform group-hover:translate-x-2"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- Szafy -->
+          <article class="offer-card bg-white rounded-sm overflow-hidden group reveal reveal-delay-1">
+            <div class="relative aspect-[16/10] overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?auto=format&fit=crop&w=1100&q=80" alt="Szafa i garderoba na wymiar" class="w-full h-full object-cover" loading="lazy" />
+              <span class="absolute top-5 left-5 bg-forest-800/90 text-copper-300 text-[11px] font-semibold tracking-[0.2em] uppercase px-4 py-2">02 · Szafy</span>
+            </div>
+            <div class="p-8 lg:p-10">
+              <h3 class="font-serif text-3xl text-forest-800 font-semibold">Szafy i garderoby</h3>
+              <p class="mt-4 text-ink/70 leading-relaxed">
+                Porządek, który zachwyca. Tworzymy szafy wnękowe, przesuwne i garderoby typu walk-in, idealnie dopasowane do skosów, wnęk i nietypowych przestrzeni. Przemyślane wnętrza z systemami organizacji i oświetleniem LED sprawiają, że wszystko ma swoje miejsce.
+              </p>
+              <ul class="mt-6 grid grid-cols-2 gap-y-2 gap-x-4 text-sm text-ink/75">
+                <li><i class="fa-solid fa-check text-copper-500 mr-2"></i>Drzwi przesuwne i uchylne</li>
+                <li><i class="fa-solid fa-check text-copper-500 mr-2"></i>Garderoby walk-in</li>
+                <li><i class="fa-solid fa-check text-copper-500 mr-2"></i>Zabudowy pod skosy</li>
+                <li><i class="fa-solid fa-check text-copper-500 mr-2"></i>Oświetlenie LED</li>
+              </ul>
+              <a href="#kontakt" data-service="Szafy i garderoby" class="service-link inline-flex items-center gap-3 mt-8 text-forest-800 font-semibold text-sm tracking-[0.12em] uppercase group-hover:text-copper-600 transition">
+                Zapytaj o szafę <i class="fa-solid fa-arrow-right-long transition-transform group-hover:translate-x-2"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- Zabudowy -->
+          <article class="offer-card bg-white rounded-sm overflow-hidden group reveal">
+            <div class="relative aspect-[16/10] overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1100&q=80" alt="Zabudowa salonu na wymiar" class="w-full h-full object-cover" loading="lazy" />
+              <span class="absolute top-5 left-5 bg-forest-800/90 text-copper-300 text-[11px] font-semibold tracking-[0.2em] uppercase px-4 py-2">03 · Zabudowy</span>
+            </div>
+            <div class="p-8 lg:p-10">
+              <h3 class="font-serif text-3xl text-forest-800 font-semibold">Zabudowy wnętrz</h3>
+              <p class="mt-4 text-ink/70 leading-relaxed">
+                Salon, łazienka, sypialnia, gabinet czy przedpokój – projektujemy zabudowy, które porządkują przestrzeń i nadają jej charakter. Ściany RTV, biblioteczki, meble łazienkowe, panele ścienne i ukryte drzwi tworzą spójną, elegancką całość.
+              </p>
+              <ul class="mt-6 grid grid-cols-2 gap-y-2 gap-x-4 text-sm text-ink/75">
+                <li><i class="fa-solid fa-check text-copper-500 mr-2"></i>Ściany RTV i biblioteczki</li>
+                <li><i class="fa-solid fa-check text-copper-500 mr-2"></i>Meble łazienkowe</li>
+                <li><i class="fa-solid fa-check text-copper-500 mr-2"></i>Panele i lamele ścienne</li>
+                <li><i class="fa-solid fa-check text-copper-500 mr-2"></i>Meble do biur i lokali</li>
+              </ul>
+              <a href="#kontakt" data-service="Zabudowy wnętrz" class="service-link inline-flex items-center gap-3 mt-8 text-forest-800 font-semibold text-sm tracking-[0.12em] uppercase group-hover:text-copper-600 transition">
+                Zapytaj o zabudowę <i class="fa-solid fa-arrow-right-long transition-transform group-hover:translate-x-2"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- Pod klucz -->
+          <article class="offer-card bg-forest-800 grain text-cream-100 rounded-sm overflow-hidden group reveal reveal-delay-1">
+            <div class="relative aspect-[16/10] overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1100&q=80" alt="Wnętrze wykończone pod klucz" class="w-full h-full object-cover opacity-90" loading="lazy" />
+              <span class="absolute top-5 left-5 bg-copper-500 text-white text-[11px] font-semibold tracking-[0.2em] uppercase px-4 py-2">04 · Pod klucz</span>
+            </div>
+            <div class="p-8 lg:p-10">
+              <h3 class="font-serif text-3xl font-semibold">Realizacje pod klucz</h3>
+              <p class="mt-4 text-cream-100/75 leading-relaxed">
+                Kompleksowe umeblowanie domu, apartamentu lub lokalu użytkowego w ramach jednej, skoordynowanej realizacji. Dla firm wykończeniowych i deweloperów jesteśmy sprawdzonym podwykonawcą: przejmujemy pełną odpowiedzialność za meble, dostosowujemy się do harmonogramu i współpracujemy z pozostałymi ekipami na budowie.
+              </p>
+              <ul class="mt-6 grid grid-cols-2 gap-y-2 gap-x-4 text-sm text-cream-100/80">
+                <li><i class="fa-solid fa-check text-copper-400 mr-2"></i>Jeden opiekun projektu</li>
+                <li><i class="fa-solid fa-check text-copper-400 mr-2"></i>Gwarantowane terminy</li>
+                <li><i class="fa-solid fa-check text-copper-400 mr-2"></i>Współpraca B2B</li>
+                <li><i class="fa-solid fa-check text-copper-400 mr-2"></i>Faktura VAT</li>
+              </ul>
+              <a href="#kontakt" data-service="Realizacja pod klucz" class="service-link inline-flex items-center gap-3 mt-8 text-copper-300 font-semibold text-sm tracking-[0.12em] uppercase group-hover:text-copper-400 transition">
+                Nawiąż współpracę <i class="fa-solid fa-arrow-right-long transition-transform group-hover:translate-x-2"></i>
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pasek B2B -->
+    <section class="relative py-20 overflow-hidden bg-forest-950">
+      <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=2000&q=70" alt="" aria-hidden="true" class="absolute inset-0 w-full h-full object-cover opacity-20" loading="lazy" />
+      <div class="relative max-w-5xl mx-auto px-5 lg:px-8 text-center">
+        <p class="ornament text-copper-400 text-xs font-semibold tracking-widest2 uppercase mb-5 reveal">Dla firm wykończeniowych i architektów</p>
+        <h2 class="font-serif text-cream-100 text-3xl sm:text-5xl leading-tight font-medium reveal reveal-delay-1">
+          Szukasz rzetelnego partnera do realizacji mebli w Twoich inwestycjach?
+        </h2>
+        <p class="mt-6 text-cream-100/70 max-w-2xl mx-auto reveal reveal-delay-2">
+          Oferujemy stałe warunki współpracy, priorytetowe terminy, wsparcie projektowe i pełną dokumentację techniczną. Twoi klienci zyskują wyjątkowe meble, a Ty – pewność, że projekt zostanie zamknięty na czas.
+        </p>
+        <a href="#kontakt" data-service="Współpraca B2B" class="service-link btn-copper inline-block mt-10 text-white text-[13px] font-semibold tracking-[0.15em] uppercase px-9 py-4 rounded-sm reveal reveal-delay-3">
+          Porozmawiajmy o współpracy
+        </a>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         4. REALIZACJE (PORTFOLIO)
+    ============================================================ -->
+    <section id="realizacje" class="py-24 lg:py-32 bg-cream-100">
+      <div class="max-w-7xl mx-auto px-5 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <p class="ornament text-copper-600 text-xs font-semibold tracking-widest2 uppercase mb-5 reveal">Realizacje</p>
+          <h2 class="font-serif text-4xl sm:text-5xl lg:text-[3.4rem] leading-[1.08] text-forest-800 font-medium reveal reveal-delay-1">
+            Nasze projekty mówią <em class="text-copper-600">same za siebie</em>
+          </h2>
+          <p class="mt-6 text-ink/70 reveal reveal-delay-2">Każda realizacja to inna historia, inne wnętrze i ten sam standard jakości. Zobacz wybrane projekty z naszego portfolio.</p>
+        </div>
+
+        <!-- Filtry -->
+        <div class="flex flex-wrap justify-center gap-3 mb-12 reveal" role="group" aria-label="Filtruj realizacje">
+          <button class="filter-btn active border border-forest-800/25 text-forest-800 text-xs font-semibold tracking-[0.15em] uppercase px-5 py-2.5 rounded-full transition hover:border-forest-800" data-filter="all">Wszystkie</button>
+          <button class="filter-btn border border-forest-800/25 text-forest-800 text-xs font-semibold tracking-[0.15em] uppercase px-5 py-2.5 rounded-full transition hover:border-forest-800" data-filter="kuchnie">Kuchnie</button>
+          <button class="filter-btn border border-forest-800/25 text-forest-800 text-xs font-semibold tracking-[0.15em] uppercase px-5 py-2.5 rounded-full transition hover:border-forest-800" data-filter="szafy">Szafy</button>
+          <button class="filter-btn border border-forest-800/25 text-forest-800 text-xs font-semibold tracking-[0.15em] uppercase px-5 py-2.5 rounded-full transition hover:border-forest-800" data-filter="zabudowy">Zabudowy</button>
+        </div>
+
+        <!--
+          SIATKA PORTFOLIO
+          Aby dodać własne zdjęcia: wrzuć pliki do folderu /img w repozytorium
+          i zamień adres w atrybucie src, np. src="img/kuchnia-1.jpg".
+        -->
+        <div id="portfolioGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 auto-rows-[280px]">
+          <figure class="portfolio-item relative rounded-sm lg:row-span-2" data-category="kuchnie" tabindex="0">
+            <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=900&q=80" alt="Kuchnia z wyspą w odcieniach bieli i drewna" class="w-full h-full object-cover" loading="lazy" />
+            <figcaption class="portfolio-caption absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-forest-950/90 to-transparent text-cream-100">
+              <span class="text-[10px] tracking-widest2 uppercase text-copper-300">Kuchnia · Warszawa</span>
+              <h3 class="font-serif text-2xl mt-1">Kuchnia z wyspą i fornirem dębowym</h3>
+            </figcaption>
+          </figure>
+          <figure class="portfolio-item relative rounded-sm" data-category="zabudowy" tabindex="0">
+            <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=80" alt="Zabudowa salonu" class="w-full h-full object-cover" loading="lazy" />
+            <figcaption class="portfolio-caption absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-forest-950/90 to-transparent text-cream-100">
+              <span class="text-[10px] tracking-widest2 uppercase text-copper-300">Salon · Apartament</span>
+              <h3 class="font-serif text-2xl mt-1">Ściana RTV z lamelami</h3>
+            </figcaption>
+          </figure>
+          <figure class="portfolio-item relative rounded-sm" data-category="szafy" tabindex="0">
+            <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?auto=format&fit=crop&w=900&q=80" alt="Garderoba na wymiar" class="w-full h-full object-cover" loading="lazy" />
+            <figcaption class="portfolio-caption absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-forest-950/90 to-transparent text-cream-100">
+              <span class="text-[10px] tracking-widest2 uppercase text-copper-300">Garderoba · Dom jednorodzinny</span>
+              <h3 class="font-serif text-2xl mt-1">Garderoba walk-in z LED</h3>
+            </figcaption>
+          </figure>
+          <figure class="portfolio-item relative rounded-sm" data-category="kuchnie" tabindex="0">
+            <img src="https://images.unsplash.com/photo-1565538810643-b5bdb714032a?auto=format&fit=crop&w=900&q=80" alt="Ciemna nowoczesna kuchnia" class="w-full h-full object-cover" loading="lazy" />
+            <figcaption class="portfolio-caption absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-forest-950/90 to-transparent text-cream-100">
+              <span class="text-[10px] tracking-widest2 uppercase text-copper-300">Kuchnia · Loft</span>
+              <h3 class="font-serif text-2xl mt-1">Kuchnia bezuchwytowa w grafitach</h3>
+            </figcaption>
+          </figure>
+          <figure class="portfolio-item relative rounded-sm lg:row-span-2" data-category="zabudowy" tabindex="0">
+            <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=900&q=80" alt="Wnętrze pod klucz" class="w-full h-full object-cover" loading="lazy" />
+            <figcaption class="portfolio-caption absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-forest-950/90 to-transparent text-cream-100">
+              <span class="text-[10px] tracking-widest2 uppercase text-copper-300">Pod klucz · Rezydencja</span>
+              <h3 class="font-serif text-2xl mt-1">Kompleksowa zabudowa domu</h3>
+            </figcaption>
+          </figure>
+          <figure class="portfolio-item relative rounded-sm" data-category="kuchnie" tabindex="0">
+            <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=900&q=80" alt="Jasna kuchnia klasyczna" class="w-full h-full object-cover" loading="lazy" />
+            <figcaption class="portfolio-caption absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-forest-950/90 to-transparent text-cream-100">
+              <span class="text-[10px] tracking-widest2 uppercase text-copper-300">Kuchnia · Mieszkanie</span>
+              <h3 class="font-serif text-2xl mt-1">Jasna kuchnia w stylu modern classic</h3>
+            </figcaption>
+          </figure>
+          <figure class="portfolio-item relative rounded-sm" data-category="szafy" tabindex="0">
+            <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=900&q=80" alt="Sypialnia z zabudową" class="w-full h-full object-cover" loading="lazy" />
+            <figcaption class="portfolio-caption absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-forest-950/90 to-transparent text-cream-100">
+              <span class="text-[10px] tracking-widest2 uppercase text-copper-300">Sypialnia · Apartament</span>
+              <h3 class="font-serif text-2xl mt-1">Szafa z frontami ryflowanymi</h3>
+            </figcaption>
+          </figure>
+          <figure class="portfolio-item relative rounded-sm" data-category="zabudowy" tabindex="0">
+            <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=900&q=80" alt="Elegancki salon z meblami na wymiar" class="w-full h-full object-cover" loading="lazy" />
+            <figcaption class="portfolio-caption absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-forest-950/90 to-transparent text-cream-100">
+              <span class="text-[10px] tracking-widest2 uppercase text-copper-300">Salon · Dom</span>
+              <h3 class="font-serif text-2xl mt-1">Biblioteczka i zabudowa salonu</h3>
+            </figcaption>
+          </figure>
+        </div>
+
+        <div class="text-center mt-14 reveal">
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="inline-flex items-center gap-3 text-forest-800 font-semibold text-sm tracking-[0.12em] uppercase hover:text-copper-600 transition">
+            <i class="fa-brands fa-instagram text-lg"></i> Więcej realizacji na Instagramie
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="fixed inset-0 z-[60] bg-forest-950/95 opacity-0 pointer-events-none flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-label="Podgląd realizacji">
+      <button id="lbClose" class="absolute top-5 right-5 w-12 h-12 text-cream-100 text-2xl hover:text-copper-400" aria-label="Zamknij"><i class="fa-solid fa-xmark"></i></button>
+      <button id="lbPrev" class="absolute left-3 sm:left-6 w-12 h-12 text-cream-100 text-2xl hover:text-copper-400" aria-label="Poprzednie zdjęcie"><i class="fa-solid fa-chevron-left"></i></button>
+      <button id="lbNext" class="absolute right-3 sm:right-6 w-12 h-12 text-cream-100 text-2xl hover:text-copper-400" aria-label="Następne zdjęcie"><i class="fa-solid fa-chevron-right"></i></button>
+      <figure class="max-w-5xl w-full">
+        <img id="lbImg" src="" alt="" class="w-full max-h-[78vh] object-contain rounded-sm" />
+        <figcaption id="lbCaption" class="text-center text-cream-100 font-serif text-2xl mt-5"></figcaption>
+      </figure>
+    </div>
+
+    <!-- ============================================================
+         5. OPINIE
+    ============================================================ -->
+    <section id="opinie" class="py-24 lg:py-32 bg-cream-50 relative overflow-hidden">
+      <div class="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-copper-300/10 blur-3xl pointer-events-none"></div>
+      <div class="max-w-7xl mx-auto px-5 lg:px-8 relative">
+        <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-10 mb-14">
+          <div class="max-w-2xl">
+            <p class="ornament ornament-left text-copper-600 text-xs font-semibold tracking-widest2 uppercase mb-5 reveal">Opinie klientów</p>
+            <h2 class="font-serif text-4xl sm:text-5xl lg:text-[3.4rem] leading-[1.08] text-forest-800 font-medium reveal reveal-delay-1">
+              Zaufanie budujemy <em class="text-copper-600">każdym projektem</em>
+            </h2>
+          </div>
+
+          <!-- Podsumowanie ocen -->
+          <div class="flex flex-wrap gap-4 reveal reveal-delay-2">
+            <a href="https://www.google.com/maps" target="_blank" rel="noopener" class="flex items-center gap-4 bg-white px-6 py-4 rounded-sm shadow-sm hover:shadow-md transition">
+              <svg class="w-9 h-9" viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg>
+              <div>
+                <p class="flex items-center gap-2"><span class="font-bold text-xl text-forest-800">5.0</span><span class="text-copper-500 text-sm"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span></p>
+                <p class="text-xs text-ink/60">Opinie w Google</p>
+              </div>
+            </a>
+            <a href="https://www.oferteo.pl/" target="_blank" rel="noopener" class="flex items-center gap-4 bg-white px-6 py-4 rounded-sm shadow-sm hover:shadow-md transition">
+              <span class="w-9 h-9 rounded-full bg-[#F28C28] text-white font-bold flex items-center justify-center text-lg" aria-hidden="true">O</span>
+              <div>
+                <p class="flex items-center gap-2"><span class="font-bold text-xl text-forest-800">4.9</span><span class="text-copper-500 text-sm"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span></p>
+                <p class="text-xs text-ink/60">Opinie w Oferteo</p>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!--
+          KARTY OPINII – PRZYKŁADOWE TREŚCI.
+          Zastąp je prawdziwymi opiniami z Google i Oferteo (imię, treść, data, źródło).
+          Źródło ustawia atrybut data-source="google" lub data-source="oferteo".
+        -->
+        <div id="reviewsTrack" class="reviews-track flex gap-6 overflow-x-auto pb-6 -mx-5 px-5 lg:mx-0 lg:px-0 lg:grid lg:grid-cols-3 lg:overflow-visible">
+          <article class="review-card shrink-0 w-[85%] sm:w-[60%] lg:w-auto bg-white p-8 rounded-sm flex flex-col" data-source="google">
+            <div class="flex items-center justify-between">
+              <span class="text-copper-500"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span>
+              <span class="source-badge"></span>
+            </div>
+            <i class="fa-solid fa-quote-left text-4xl text-copper-300/50 mt-6"></i>
+            <p class="mt-3 text-ink/75 leading-relaxed flex-1">Kuchnia przerosła nasze oczekiwania. Pan Mateusz doradził rozwiązania, o których sami byśmy nie pomyśleli, a montaż przebiegł perfekcyjnie i w ustalonym terminie. Jakość wykonania na najwyższym poziomie – polecamy z czystym sumieniem!</p>
+            <div class="flex items-center gap-4 mt-8 pt-6 border-t border-cream-200">
+              <span class="w-12 h-12 rounded-full bg-forest-800 text-copper-300 font-serif text-xl flex items-center justify-center">A</span>
+              <div>
+                <p class="font-semibold text-forest-800">Anna K.</p>
+                <p class="text-xs text-ink/55">Kuchnia na wymiar · 2 miesiące temu</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="review-card shrink-0 w-[85%] sm:w-[60%] lg:w-auto bg-white p-8 rounded-sm flex flex-col" data-source="oferteo">
+            <div class="flex items-center justify-between">
+              <span class="text-copper-500"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span>
+              <span class="source-badge"></span>
+            </div>
+            <i class="fa-solid fa-quote-left text-4xl text-copper-300/50 mt-6"></i>
+            <p class="mt-3 text-ink/75 leading-relaxed flex-1">Jako firma wykończeniowa współpracujemy z Mirage Meble przy kolejnych inwestycjach. Terminowość, świetna komunikacja i dbałość o detale sprawiają, że nasi klienci są zachwyceni. To partner, na którym można polegać.</p>
+            <div class="flex items-center gap-4 mt-8 pt-6 border-t border-cream-200">
+              <span class="w-12 h-12 rounded-full bg-forest-800 text-copper-300 font-serif text-xl flex items-center justify-center">T</span>
+              <div>
+                <p class="font-semibold text-forest-800">Tomasz W.</p>
+                <p class="text-xs text-ink/55">Firma wykończeniowa · Współpraca B2B</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="review-card shrink-0 w-[85%] sm:w-[60%] lg:w-auto bg-white p-8 rounded-sm flex flex-col" data-source="google">
+            <div class="flex items-center justify-between">
+              <span class="text-copper-500"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span>
+              <span class="source-badge"></span>
+            </div>
+            <i class="fa-solid fa-quote-left text-4xl text-copper-300/50 mt-6"></i>
+            <p class="mt-3 text-ink/75 leading-relaxed flex-1">Zamówiliśmy szafy do sypialni i garderobę pod skosem. Wszystko idealnie spasowane, ciche domyki, piękne fronty. Ekipa kulturalna, po montażu zostawili porządek. Na pewno wrócimy przy kolejnych meblach.</p>
+            <div class="flex items-center gap-4 mt-8 pt-6 border-t border-cream-200">
+              <span class="w-12 h-12 rounded-full bg-forest-800 text-copper-300 font-serif text-xl flex items-center justify-center">M</span>
+              <div>
+                <p class="font-semibold text-forest-800">Magdalena i Piotr</p>
+                <p class="text-xs text-ink/55">Szafy i garderoba · 4 miesiące temu</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="review-card shrink-0 w-[85%] sm:w-[60%] lg:w-auto bg-white p-8 rounded-sm flex flex-col" data-source="oferteo">
+            <div class="flex items-center justify-between">
+              <span class="text-copper-500"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span>
+              <span class="source-badge"></span>
+            </div>
+            <i class="fa-solid fa-quote-left text-4xl text-copper-300/50 mt-6"></i>
+            <p class="mt-3 text-ink/75 leading-relaxed flex-1">Profesjonalne podejście od pierwszego kontaktu. Szybka i przejrzysta wycena, wizualizacja 3D i bardzo dobra cena w stosunku do jakości. Zabudowa salonu wygląda jak z katalogu.</p>
+            <div class="flex items-center gap-4 mt-8 pt-6 border-t border-cream-200">
+              <span class="w-12 h-12 rounded-full bg-forest-800 text-copper-300 font-serif text-xl flex items-center justify-center">K</span>
+              <div>
+                <p class="font-semibold text-forest-800">Krzysztof L.</p>
+                <p class="text-xs text-ink/55">Zabudowa salonu · 1 miesiąc temu</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="review-card shrink-0 w-[85%] sm:w-[60%] lg:w-auto bg-white p-8 rounded-sm flex flex-col" data-source="google">
+            <div class="flex items-center justify-between">
+              <span class="text-copper-500"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span>
+              <span class="source-badge"></span>
+            </div>
+            <i class="fa-solid fa-quote-left text-4xl text-copper-300/50 mt-6"></i>
+            <p class="mt-3 text-ink/75 leading-relaxed flex-1">Współpracuję z Mirage Meble jako architekt wnętrz. Doceniam precyzję w odwzorowaniu projektu, znajomość materiałów i elastyczność przy nietypowych rozwiązaniach. Polecam każdemu, kto szuka jakości premium.</p>
+            <div class="flex items-center gap-4 mt-8 pt-6 border-t border-cream-200">
+              <span class="w-12 h-12 rounded-full bg-forest-800 text-copper-300 font-serif text-xl flex items-center justify-center">J</span>
+              <div>
+                <p class="font-semibold text-forest-800">Joanna S.</p>
+                <p class="text-xs text-ink/55">Architekt wnętrz · Współpraca B2B</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="review-card shrink-0 w-[85%] sm:w-[60%] lg:w-auto bg-white p-8 rounded-sm flex flex-col" data-source="oferteo">
+            <div class="flex items-center justify-between">
+              <span class="text-copper-500"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span>
+              <span class="source-badge"></span>
+            </div>
+            <i class="fa-solid fa-quote-left text-4xl text-copper-300/50 mt-6"></i>
+            <p class="mt-3 text-ink/75 leading-relaxed flex-1">Kompleksowe umeblowanie całego mieszkania – kuchnia, łazienka, szafy i przedpokój. Jeden wykonawca, jeden termin i spójny efekt. Oszczędziło nam to mnóstwo czasu i nerwów. Dziękujemy!</p>
+            <div class="flex items-center gap-4 mt-8 pt-6 border-t border-cream-200">
+              <span class="w-12 h-12 rounded-full bg-forest-800 text-copper-300 font-serif text-xl flex items-center justify-center">E</span>
+              <div>
+                <p class="font-semibold text-forest-800">Ewa R.</p>
+                <p class="text-xs text-ink/55">Mieszkanie pod klucz · 3 miesiące temu</p>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="flex flex-col sm:flex-row justify-center gap-4 mt-10 reveal">
+          <a href="https://www.google.com/maps" target="_blank" rel="noopener" class="btn-outline border border-forest-800/30 text-forest-800 text-xs font-semibold tracking-[0.15em] uppercase px-7 py-3.5 rounded-sm text-center hover:!text-copper-600">
+            <i class="fa-brands fa-google mr-2"></i> Wszystkie opinie Google
+          </a>
+          <a href="https://www.oferteo.pl/" target="_blank" rel="noopener" class="btn-outline border border-forest-800/30 text-forest-800 text-xs font-semibold tracking-[0.15em] uppercase px-7 py-3.5 rounded-sm text-center hover:!text-copper-600">
+            <i class="fa-solid fa-award mr-2"></i> Nasz profil w Oferteo
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         6. KONTAKT
+    ============================================================ -->
+    <section id="kontakt" class="py-24 lg:py-32 bg-forest-800 grain text-cream-100 relative overflow-hidden">
+      <div class="absolute -bottom-40 -left-40 w-[30rem] h-[30rem] rounded-full bg-copper-500/10 blur-3xl pointer-events-none"></div>
+      <div class="max-w-7xl mx-auto px-5 lg:px-8 grid lg:grid-cols-5 gap-16 relative">
+        <!-- Dane kontaktowe -->
+        <div class="lg:col-span-2">
+          <p class="ornament ornament-left text-copper-400 text-xs font-semibold tracking-widest2 uppercase mb-5 reveal">Kontakt</p>
+          <h2 class="font-serif text-4xl sm:text-5xl leading-[1.08] font-medium reveal reveal-delay-1">
+            Porozmawiajmy o <em class="text-copper-400">Twoim wnętrzu</em>
+          </h2>
+          <p class="mt-6 text-cream-100/70 leading-relaxed reveal reveal-delay-2">
+            Opowiedz nam o swoim pomyśle – odpowiemy w ciągu 24 godzin. Pierwsza konsultacja, pomiar i wstępna wycena są całkowicie bezpłatne i do niczego nie zobowiązują.
+          </p>
+
+          <ul class="mt-10 space-y-6 reveal reveal-delay-3">
+            <li class="flex gap-5">
+              <span class="w-12 h-12 shrink-0 rounded-full border border-copper-500/50 text-copper-400 flex items-center justify-center"><i class="fa-solid fa-phone"></i></span>
+              <div>
+                <p class="text-[11px] tracking-[0.2em] uppercase text-cream-100/50">Telefon</p>
+                <a href="tel:+48500000000" class="text-lg hover:text-copper-300 transition">+48 500 000 000</a>
+              </div>
+            </li>
+            <li class="flex gap-5">
+              <span class="w-12 h-12 shrink-0 rounded-full border border-copper-500/50 text-copper-400 flex items-center justify-center"><i class="fa-solid fa-envelope"></i></span>
+              <div>
+                <p class="text-[11px] tracking-[0.2em] uppercase text-cream-100/50">E-mail</p>
+                <a href="mailto:kontakt@miragemeble.pl" class="text-lg hover:text-copper-300 transition break-all">kontakt@miragemeble.pl</a>
+              </div>
+            </li>
+            <li class="flex gap-5">
+              <span class="w-12 h-12 shrink-0 rounded-full border border-copper-500/50 text-copper-400 flex items-center justify-center"><i class="fa-solid fa-location-dot"></i></span>
+              <div>
+                <p class="text-[11px] tracking-[0.2em] uppercase text-cream-100/50">Pracownia</p>
+                <p class="text-lg">ul. Przykładowa 1, 00-000 Miasto</p>
+              </div>
+            </li>
+            <li class="flex gap-5">
+              <span class="w-12 h-12 shrink-0 rounded-full border border-copper-500/50 text-copper-400 flex items-center justify-center"><i class="fa-regular fa-clock"></i></span>
+              <div>
+                <p class="text-[11px] tracking-[0.2em] uppercase text-cream-100/50">Godziny pracy</p>
+                <p class="text-lg">Pn – Pt: 8:00 – 17:00 · Sob: po umówieniu</p>
+              </div>
+            </li>
+          </ul>
+
+          <div class="mt-10 flex gap-3 reveal">
+            <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook" class="w-11 h-11 rounded-full bg-cream-100/10 hover:bg-copper-500 flex items-center justify-center transition"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram" class="w-11 h-11 rounded-full bg-cream-100/10 hover:bg-copper-500 flex items-center justify-center transition"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.pinterest.com/" target="_blank" rel="noopener" aria-label="Pinterest" class="w-11 h-11 rounded-full bg-cream-100/10 hover:bg-copper-500 flex items-center justify-center transition"><i class="fa-brands fa-pinterest-p"></i></a>
+            <a href="https://www.tiktok.com/" target="_blank" rel="noopener" aria-label="TikTok" class="w-11 h-11 rounded-full bg-cream-100/10 hover:bg-copper-500 flex items-center justify-center transition"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="https://wa.me/48500000000" target="_blank" rel="noopener" aria-label="WhatsApp" class="w-11 h-11 rounded-full bg-cream-100/10 hover:bg-copper-500 flex items-center justify-center transition"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <!-- Formularz -->
+        <div class="lg:col-span-3 reveal reveal-delay-1">
+          <!--
+            FORMULARZ: GitHub Pages nie obsługuje backendu, dlatego używamy darmowej usługi Formspree.
+            1. Załóż konto na https://formspree.io i utwórz formularz.
+            2. Wklej swój identyfikator w miejsce TWOJ_ID w atrybucie action poniżej.
+            Dopóki ID nie zostanie ustawione, formularz otworzy program pocztowy (mailto) z wypełnioną wiadomością.
+          -->
+          <form id="contactForm" action="https://formspree.io/f/TWOJ_ID" method="POST" novalidate class="bg-forest-900/60 border border-cream-100/10 backdrop-blur-sm p-8 sm:p-12 rounded-sm">
+            <h3 class="font-serif text-3xl">Zamów bezpłatną wycenę</h3>
+            <p class="text-sm text-cream-100/60 mt-2">Pola oznaczone * są wymagane.</p>
+
+            <!-- Typ klienta -->
+            <div class="mt-8 flex gap-3" role="radiogroup" aria-label="Typ klienta">
+              <label class="flex-1 cursor-pointer">
+                <input type="radio" name="typ_klienta" value="Klient prywatny" class="peer sr-only" checked />
+                <span class="block text-center text-xs font-semibold tracking-[0.15em] uppercase py-3 border border-cream-100/25 rounded-sm transition peer-checked:bg-copper-500 peer-checked:border-copper-500 peer-checked:text-white peer-focus-visible:ring-2 peer-focus-visible:ring-copper-300">
+                  <i class="fa-solid fa-house mr-2"></i>Klient prywatny
+                </span>
+              </label>
+              <label class="flex-1 cursor-pointer">
+                <input type="radio" name="typ_klienta" value="Firma / B2B" class="peer sr-only" />
+                <span class="block text-center text-xs font-semibold tracking-[0.15em] uppercase py-3 border border-cream-100/25 rounded-sm transition peer-checked:bg-copper-500 peer-checked:border-copper-500 peer-checked:text-white peer-focus-visible:ring-2 peer-focus-visible:ring-copper-300">
+                  <i class="fa-solid fa-building mr-2"></i>Firma / B2B
+                </span>
+              </label>
+            </div>
+
+            <div class="grid sm:grid-cols-2 gap-x-8 gap-y-6 mt-4">
+              <div class="field">
+                <input type="text" id="name" name="imie" placeholder=" " required autocomplete="name" />
+                <label for="name">Imię i nazwisko *</label>
+                <p class="error-msg">Podaj imię i nazwisko.</p>
+              </div>
+              <div class="field">
+                <input type="tel" id="phone" name="telefon" placeholder=" " autocomplete="tel" />
+                <label for="phone">Telefon</label>
+                <p class="error-msg">Podaj poprawny numer telefonu.</p>
+              </div>
+              <div class="field">
+                <input type="email" id="email" name="email" placeholder=" " required autocomplete="email" />
+                <label for="email">Adres e-mail *</label>
+                <p class="error-msg">Podaj poprawny adres e-mail.</p>
+              </div>
+              <div class="field">
+                <select id="service" name="usluga" required>
+                  <option value="" disabled selected hidden></option>
+                  <option>Meble kuchenne</option>
+                  <option>Szafy i garderoby</option>
+                  <option>Zabudowy wnętrz</option>
+                  <option>Realizacja pod klucz</option>
+                  <option>Współpraca B2B</option>
+                  <option>Inne</option>
+                </select>
+                <label for="service">Czego dotyczy zapytanie? *</label>
+                <i class="fa-solid fa-chevron-down absolute right-0 top-7 text-xs text-copper-400 pointer-events-none"></i>
+                <p class="error-msg">Wybierz rodzaj usługi.</p>
+              </div>
+              <div class="field sm:col-span-2">
+                <textarea id="message" name="wiadomosc" rows="4" placeholder=" " required class="resize-none"></textarea>
+                <label for="message">Opisz krótko swój projekt *</label>
+                <p class="error-msg">Napisz kilka słów o projekcie (min. 10 znaków).</p>
+              </div>
+            </div>
+
+            <!-- Honeypot antyspam -->
+            <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off" />
+
+            <label class="flex items-start gap-3 mt-8 text-xs text-cream-100/65 leading-relaxed cursor-pointer" id="consentWrap">
+              <input type="checkbox" id="consent" name="zgoda_rodo" required class="mt-0.5 w-4 h-4 accent-[#C08A5B] shrink-0" />
+              <span>Wyrażam zgodę na przetwarzanie moich danych osobowych przez Mirage Meble w celu odpowiedzi na zapytanie, zgodnie z RODO. *</span>
+            </label>
+            <p id="consentError" class="hidden text-[#F0A58A] text-xs mt-2">Zgoda jest wymagana, abyśmy mogli odpowiedzieć.</p>
+
+            <button type="submit" id="submitBtn" class="btn-copper w-full mt-8 text-white text-[13px] font-semibold tracking-[0.18em] uppercase py-4 rounded-sm flex items-center justify-center gap-3">
+              <span>Wyślij zapytanie</span> <i class="fa-solid fa-paper-plane"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================================================
+       STOPKA
+  ============================================================ -->
+  <footer class="bg-forest-950 text-cream-100/60 pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-5 lg:px-8">
+      <div class="grid md:grid-cols-4 gap-10 pb-12 border-b border-cream-100/10">
+        <div class="md:col-span-2">
+          <a href="#home" class="flex items-center gap-3">
+            <svg class="w-10 h-10" viewBox="0 0 64 64" aria-hidden="true"><rect x="1" y="1" width="62" height="62" rx="14" fill="none" stroke="#C08A5B" stroke-width="2"/><path d="M15 46V18l17 18 17-18v28" fill="none" stroke="#D4A373" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span class="font-serif text-2xl font-semibold tracking-[0.18em] text-cream-100">MIRAGE <span class="text-copper-400">MEBLE</span></span>
+          </a>
+          <p class="mt-5 max-w-sm text-sm leading-relaxed">Meble na wymiar klasy premium. Kuchnie, szafy i kompleksowe zabudowy dla klientów prywatnych i firm wykończeniowych.</p>
+        </div>
+        <div>
+          <h4 class="text-cream-100 text-xs font-semibold tracking-[0.2em] uppercase mb-5">Nawigacja</h4>
+          <ul class="space-y-3 text-sm">
+            <li><a href="#o-nas" class="hover:text-copper-400 transition">O nas</a></li>
+            <li><a href="#oferta" class="hover:text-copper-400 transition">Oferta</a></li>
+            <li><a href="#realizacje" class="hover:text-copper-400 transition">Realizacje</a></li>
+            <li><a href="#opinie" class="hover:text-copper-400 transition">Opinie</a></li>
+            <li><a href="#kontakt" class="hover:text-copper-400 transition">Kontakt</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-cream-100 text-xs font-semibold tracking-[0.2em] uppercase mb-5">Oferta</h4>
+          <ul class="space-y-3 text-sm">
+            <li>Meble kuchenne</li>
+            <li>Szafy i garderoby</li>
+            <li>Zabudowy wnętrz</li>
+            <li>Realizacje pod klucz</li>
+          </ul>
+        </div>
+      </div>
+      <div class="flex flex-col sm:flex-row justify-between gap-4 pt-8 text-xs">
+        <p>&copy; <span id="year"></span> Mirage Meble. Wszelkie prawa zastrzeżone.</p>
+        <p>Zaprojektowane z dbałością o detal.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Przycisk do góry -->
+  <a href="#home" id="toTop" class="fixed bottom-6 right-6 z-40 w-12 h-12 rounded-full btn-copper text-white flex items-center justify-center opacity-0 translate-y-4 pointer-events-none shadow-lg" aria-label="Wróć na górę">
+    <i class="fa-solid fa-arrow-up"></i>
+  </a>
+
+  <!-- Toast -->
+  <div id="toast" class="fixed bottom-6 left-1/2 z-[70] -translate-x-1/2 translate-y-6 opacity-0 pointer-events-none bg-cream-100 text-forest-800 px-6 py-4 rounded-sm shadow-2xl flex items-center gap-3 text-sm font-medium max-w-[90vw]" role="status" aria-live="polite">
+    <i class="fa-solid fa-circle-check text-copper-500 text-lg"></i><span id="toastMsg"></span>
+  </div>
+
+  <script>
+    (function () {
+      'use strict';
+
+      /* ---------- Rok w stopce ---------- */
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      /* ---------- Nawigacja: tło po przewinięciu + przycisk do góry ---------- */
+      const navbar = document.getElementById('navbar');
+      const toTop = document.getElementById('toTop');
+      const onScroll = () => {
+        const y = window.scrollY;
+        navbar.classList.toggle('scrolled', y > 60);
+        toTop.classList.toggle('show', y > 700);
+      };
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+
+      /* ---------- Menu mobilne ---------- */
+      const burger = document.getElementById('burger');
+      const mobileMenu = document.getElementById('mobileMenu');
+      const toggleMenu = (open) => {
+        const isOpen = open ?? !mobileMenu.classList.contains('open');
+        mobileMenu.classList.toggle('open', isOpen);
+        burger.classList.toggle('open', isOpen);
+        burger.setAttribute('aria-expanded', String(isOpen));
+        burger.setAttribute('aria-label', isOpen ? 'Zamknij menu' : 'Otwórz menu');
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+      };
+      burger.addEventListener('click', () => toggleMenu());
+      document.querySelectorAll('.mobile-link').forEach(l => l.addEventListener('click', () => toggleMenu(false)));
+
+      /* ---------- Aktywny link w menu ---------- */
+      const sections = document.querySelectorAll('main section[id]');
+      const navLinks = document.querySelectorAll('.nav-link');
+      const spy = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            navLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + e.target.id));
+          }
+        });
+      }, { rootMargin: '-45% 0px -50% 0px' });
+      sections.forEach(s => spy.observe(s));
+
+      /* ---------- Animacje przy przewijaniu ---------- */
+      const revealObs = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); }
+        });
+      }, { threshold: 0.12 });
+      document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+      /* ---------- Liczniki ---------- */
+      const counterObs = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (!e.isIntersecting) return;
+          const el = e.target, target = +el.dataset.count, dur = 1800, start = performance.now();
+          const tick = (now) => {
+            const p = Math.min((now - start) / dur, 1);
+            el.textContent = Math.round(target * (1 - Math.pow(1 - p, 3)));
+            if (p < 1) requestAnimationFrame(tick);
+          };
+          requestAnimationFrame(tick);
+          counterObs.unobserve(el);
+        });
+      }, { threshold: 0.6 });
+      document.querySelectorAll('[data-count]').forEach(el => counterObs.observe(el));
+
+      /* ---------- Fallback dla niewczytanych zdjęć ---------- */
+      document.querySelectorAll('img').forEach(img => {
+        img.addEventListener('error', () => { img.classList.add('img-fallback'); img.removeAttribute('src'); }, { once: true });
+      });
+
+      /* ---------- Filtrowanie portfolio ---------- */
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      const items = [...document.querySelectorAll('.portfolio-item')];
+      filterBtns.forEach(btn => btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const f = btn.dataset.filter;
+        items.forEach(it => it.classList.toggle('hide', f !== 'all' && it.dataset.category !== f));
+      }));
+
+      /* ---------- Lightbox ---------- */
+      const lb = document.getElementById('lightbox');
+      const lbImg = document.getElementById('lbImg');
+      const lbCap = document.getElementById('lbCaption');
+      let current = 0;
+      const visibleItems = () => items.filter(i => !i.classList.contains('hide'));
+      const show = (idx) => {
+        const list = visibleItems();
+        current = (idx + list.length) % list.length;
+        const img = list[current].querySelector('img');
+        lbImg.src = (img.currentSrc || img.src || '').replace(/w=\d+/, 'w=1800');
+        lbImg.alt = img.alt;
+        lbCap.textContent = list[current].querySelector('h3').textContent;
+      };
+      const openLb = (item) => { show(visibleItems().indexOf(item)); lb.classList.add('open'); document.body.style.overflow = 'hidden'; document.getElementById('lbClose').focus(); };
+      const closeLb = () => { lb.classList.remove('open'); document.body.style.overflow = ''; };
+      items.forEach(it => {
+        it.addEventListener('click', () => openLb(it));
+        it.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openLb(it); } });
+      });
+      document.getElementById('lbClose').addEventListener('click', closeLb);
+      document.getElementById('lbPrev').addEventListener('click', (e) => { e.stopPropagation(); show(current - 1); });
+      document.getElementById('lbNext').addEventListener('click', (e) => { e.stopPropagation(); show(current + 1); });
+      lb.addEventListener('click', (e) => { if (e.target === lb) closeLb(); });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') { if (lb.classList.contains('open')) closeLb(); if (mobileMenu.classList.contains('open')) toggleMenu(false); }
+        if (!lb.classList.contains('open')) return;
+        if (e.key === 'ArrowLeft') show(current - 1);
+        if (e.key === 'ArrowRight') show(current + 1);
+      });
+
+      /* ---------- Oznaczenia źródeł opinii (Google / Oferteo) ---------- */
+      const badges = {
+        google: '<span class="inline-flex items-center gap-1.5 text-[11px] font-semibold text-ink/60"><svg class="w-4 h-4" viewBox="0 0 48 48"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg>Google</span>',
+        oferteo: '<span class="inline-flex items-center gap-1.5 text-[11px] font-semibold text-ink/60"><span class="w-4 h-4 rounded-full bg-[#F28C28] text-white text-[9px] font-bold flex items-center justify-center">O</span>Oferteo</span>'
+      };
+      document.querySelectorAll('.review-card').forEach(card => {
+        const b = card.querySelector('.source-badge');
+        if (b) b.innerHTML = badges[card.dataset.source] || '';
+      });
+
+      /* ---------- Przekazanie wybranej usługi do formularza ---------- */
+      const serviceSelect = document.getElementById('service');
+      document.querySelectorAll('.service-link').forEach(link => link.addEventListener('click', () => {
+        const val = link.dataset.service;
+        [...serviceSelect.options].forEach(o => { if (o.text === val) serviceSelect.value = o.value || o.text; });
+        if (val === 'Współpraca B2B') {
+          document.querySelector('input[name="typ_klienta"][value="Firma / B2B"]').checked = true;
+        }
+      }));
+
+      /* ---------- Toast ---------- */
+      const toast = document.getElementById('toast');
+      const showToast = (msg) => {
+        document.getElementById('toastMsg').textContent = msg;
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 5000);
+      };
+
+      /* ---------- Formularz kontaktowy ---------- */
+      const form = document.getElementById('contactForm');
+      const submitBtn = document.getElementById('submitBtn');
+      const CONTACT_EMAIL = 'kontakt@miragemeble.pl';
+      const validators = {
+        name: v => v.trim().length >= 2,
+        email: v => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim()),
+        phone: v => v.trim() === '' || /^[+\d\s()-]{9,}$/.test(v.trim()),
+        service: v => v !== '',
+        message: v => v.trim().length >= 10
+      };
+      const validateField = (id) => {
+        const el = document.getElementById(id);
+        const ok = validators[id](el.value);
+        el.closest('.field').classList.toggle('invalid', !ok);
+        el.setAttribute('aria-invalid', String(!ok));
+        return ok;
+      };
+      Object.keys(validators).forEach(id => {
+        const el = document.getElementById(id);
+        el.addEventListener('blur', () => validateField(id));
+        el.addEventListener('input', () => { if (el.closest('.field').classList.contains('invalid')) validateField(id); });
+        el.addEventListener('change', () => validateField(id));
+      });
+      const consent = document.getElementById('consent');
+      const consentError = document.getElementById('consentError');
+      consent.addEventListener('change', () => consentError.classList.toggle('hidden', consent.checked));
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const results = Object.keys(validators).map(validateField);
+        const consentOk = consent.checked;
+        consentError.classList.toggle('hidden', consentOk);
+        if (results.includes(false) || !consentOk) {
+          const firstInvalid = form.querySelector('.invalid input, .invalid textarea, .invalid select') || consent;
+          firstInvalid.focus();
+          return;
+        }
+
+        const data = new FormData(form);
+        const notConfigured = form.action.includes('TWOJ_ID');
+
+        if (notConfigured) {
+          // Fallback: otwarcie programu pocztowego z gotową wiadomością
+          const body = [
+            'Typ klienta: ' + data.get('typ_klienta'),
+            'Imię i nazwisko: ' + data.get('imie'),
+            'Telefon: ' + (data.get('telefon') || '-'),
+            'E-mail: ' + data.get('email'),
+            'Usługa: ' + data.get('usluga'),
+            '',
+            data.get('wiadomosc')
+          ].join('\n');
+          window.location.href = 'mailto:' + CONTACT_EMAIL +
+            '?subject=' + encodeURIComponent('Zapytanie ze strony – ' + data.get('usluga')) +
+            '&body=' + encodeURIComponent(body);
+          return;
+        }
+
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> <span>Wysyłanie…</span>';
+        try {
+          const res = await fetch(form.action, { method: 'POST', body: data, headers: { Accept: 'application/json' } });
+          if (!res.ok) throw new Error('HTTP ' + res.status);
+          form.reset();
+          form.querySelectorAll('.field').forEach(f => f.classList.remove('invalid'));
+          showToast('Dziękujemy! Odezwiemy się w ciągu 24 godzin.');
+        } catch (err) {
+          showToast('Nie udało się wysłać. Zadzwoń lub napisz: ' + CONTACT_EMAIL);
+        } finally {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = '<span>Wyślij zapytanie</span> <i class="fa-solid fa-paper-plane"></i>';
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
