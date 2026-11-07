@@ -8,11 +8,9 @@ Statyczna strona one-page (HTML + Tailwind CSS przez CDN + Font Awesome + Vanill
 3. Po ok. minucie strona będzie dostępna pod adresem `https://<użytkownik>.github.io/<repozytorium>/`.
 
 ## Co uzupełnić przed startem
-- **Telefon / e-mail / adres** – wyszukaj w `index.html`: `+48 500 000 000`, `500000000`, `kontakt@miragemeble.pl`, `ul. Przykładowa 1`.
 - **Formularz** – załóż darmowe konto na [formspree.io](https://formspree.io) i zamień `TWOJ_ID` w atrybucie `action` formularza. Do tego czasu formularz otwiera program pocztowy (mailto).
 - **Zdjęcia realizacji** – dodaj pliki do folderu `img/` i podmień adresy `src` w sekcji `#realizacje`.
-- **Opinie** – zastąp przykładowe karty prawdziwymi opiniami (atrybut `data-source="google"` lub `"oferteo"`), a linki do profili Google/Oferteo i social media – własnymi adresami.
-- **Liczby w Hero** (lata doświadczenia, liczba projektów, gwarancja) – atrybuty `data-count`.
+- **Opinie** – zastąp przykładowe karty prawdziwymi opiniami (atrybut `data-source="google"` lub `"oferteo"`), uzupełnij oceny oraz linki do Facebooka, Instagrama i wizytówki Google.
 
 ## Materiały marki (folder `img/`)
 | Plik | Zastosowanie |
